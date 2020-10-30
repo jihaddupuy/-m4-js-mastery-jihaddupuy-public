@@ -1,12 +1,12 @@
-class Donut{
+class DonutMaker {
     constructor(){
-        this.Donut=0;
+        this.donut = 0;
     }
     AddDonut(){
-        this.Donut +=1;
+        this.donut += 1;
     }
     getDonut(){
-        return this.Donut;
+        return this.donut;
     }
 }
 
