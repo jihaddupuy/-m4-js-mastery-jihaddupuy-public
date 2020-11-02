@@ -18,5 +18,14 @@ describe('donut maker should add donuts:', function(){
                 expect(underTest.getDonut()).toBe(0)
             })
         })
+        describe('donutMaker add should addDonut', function(){
+            describe('when addDonut is pressed',function(){
+                it('should add donut by 1',function(){
+                    underTest.addDonut()
+                    expect(underTest.getDonut()).toBe(1)
+                })
+            })
+
+        })
    })
 })
