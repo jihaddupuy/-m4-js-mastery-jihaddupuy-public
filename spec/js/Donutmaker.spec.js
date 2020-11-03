@@ -14,11 +14,11 @@ describe('donut maker should add donuts:', function(){
             })
         })
         describe('get donut should return current value of donut',function(){
-            it('should retun 0 for new car',function(){
+            it('should retun 0 for new DonutMaker',function(){
                 expect(underTest.getDonut()).toBe(0)
             })
         })
-        describe('donutMaker add should addDonut', function(){
+        describe('donutMaker should addDonut when addDonut is clicked', function(){
             describe('when addDonut is pressed',function(){
                 it('should add donut by 1',function(){
                     underTest.addDonut()
@@ -27,5 +27,14 @@ describe('donut maker should add donuts:', function(){
             })
 
         })
+        describe('DonutMaker should autoClick when auto clicker is purchased',function(){
+            it('should cost donutCount 100',function(){
+        //act
+        underTest.addDonut(); // D
+        underTest.buyAutoclicker()
+        // assert
+        expect(underTest.addDonut())
+    })
+    })
    })
 })
