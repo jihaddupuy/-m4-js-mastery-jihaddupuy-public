@@ -1,24 +1,25 @@
 class DonutMaker {
     constructor(){
-        this.donut = 0;
-        this.autoClicker= 1;
+        this.donutCount = 0;
+        this.autoClickerCount=0;
+        this.outClickerCost=100;
     }
     
     getDonut(){
-        return this.donut;
+        return this.donutCount;
     }
-    AddDonut(){
-        this.donut += 1;
+    addDonut(){
+        this.donutCount += 1;
     }
-    BuyAutoClicker(){
+    purchaseAutoClicker(){
+        this.autoClickerCount+=1;
+    }
+    buyAutoClicker(){
          this.donut++
-        this.donut-=100;
-        if (this.donut<0){
-            this.donut=0;
         }
-
+    getAutoClickerCount(){
+        return this.autoClickerCount;
     }
-    
 }
 
 
