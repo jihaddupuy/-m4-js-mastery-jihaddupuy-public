@@ -3,6 +3,7 @@ class DonutMaker {
         this.donutCount = 0;
         this.autoClickerCount=0;
         this.autoClickerCost=100;
+        this.donutmultiplier=10;
     }
     addDonut(){
         this.donutCount += 1;
@@ -24,13 +25,19 @@ class DonutMaker {
         
         this.autoClickerCost +=0.10;
         if(this.donutCount< 100){
-            this.autoClickerCount =0
+            this.autoClickerCount =0;
         }
     }
-    autoCountAffectsDonutCount(){
-        for( this.autoClickerCount;this.donutCount){
-
+    autoCountAffectsDonutCountWhenActive(){
+        for( let i=0; i< this.autoClickerCount; i++){
+            this.addDonut()
         }
+    }
+    GetDonutMultiplier(){
+        this.donutmultiplier+=1;
+    }
+    returnDonutMultiplier(){
+        return this.donutmultiplier;
     }
 }
 
