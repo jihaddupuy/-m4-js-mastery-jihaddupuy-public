@@ -5,7 +5,6 @@ describe('donut maker should add donuts:', function(){
     beforeEach( function(){
         underTest = new DonutMaker()
     })
-
    describe('donut maker should have properties', function(){
 
         describe('should have donut', function(){
@@ -25,16 +24,31 @@ describe('donut maker should add donuts:', function(){
                     expect(underTest.getDonut()).toBe(1)
                 })
             })
-
         })
+        describe('autoclickerCount should increase by 1 when purchased',function(){
+            //act
+            underTest.purchaseAutoClicker()
+            //assert
+            expect(underTest.purchaseAutoClicker()).toBe(1)
+        })
+        
         describe('DonutMaker should autoClick when auto clicker is purchased',function(){
             it('should cost donutCount 100',function(){
         //act
-        underTest.addDonut(); // D
+        underTest.addDonut(); // Donut count should decress from 100 to 0
         underTest.buyAutoclicker()
         // assert
         expect(underTest.addDonut())
-    })
-    })
+             })
+        })
+        describe('Donut Maker should increase the cost of each auto click with every new purchase',function(){
+            it('should increase autoclicker count by 10%',function(){
+                    //act
+                    underTest.increaseCostOfAutoClicker()
+                    //assert
+                    expect(underTest.increaseCostOfAutoClicker()).toBe(110)
+            })
+        })
+        describe('')
    })
 })
