@@ -21,7 +21,16 @@ class DonutMaker {
         return this.autoClickerCount;
     }
     IncreaseCostOfAutoClicker(){
+        
         this.autoClickerCost +=0.10;
+        if(this.donutCount< 100){
+            this.autoClickerCount =0
+        }
+    }
+    autoCountAffectsDonutCount(){
+        for( this.autoClickerCount;this.donutCount){
+
+        }
     }
 }
 
