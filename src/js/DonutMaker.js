@@ -13,7 +13,7 @@ class DonutMaker {
         this.donutCount += 1;
     }
 
-    getDonut(){
+    getDonutCount(){
         return this.donutCount;
     }
    
