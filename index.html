@@ -9,29 +9,23 @@
 <body>
     <div class="container">
         <div class="anchor"></div>
-        <section class="addDonut">
-            <H2>IronMan Donut Shop</H2>
-            <button>Add Donut</button>
-        </section>
-        <section class="getDonutCount">
-            <H2></H2>
-        </section>
-        <section class="purchaseAutoClicker">
-            <H2 class="hidden"></H2>
-            <button>purchase Auto Clicker</button>
-        </section>
-        <section class="getAutoClickerCount">
-            <H2></H2>
-        </section>
-        <section class="getDonutMultiplier">
-            <H2 class="hidden"></H2>
-            <button> purchase Donut Multiplier</button>
-        </section>
-        <section class="returnDonutmultiplier">
-            <H2></H2>
-        </section>
+        <H2>IronMan Donut Shop</H2>
+        <Section class="donut_Game_Display">
+            <h2>Donut Count:</h2> 
+            <h2 class="donut_Count_Display">initial Donut</h2>
+            <h2> Purchase Auto Clicker Count:</h2> 
+            <h2 class="autoClicker_Dount_Display">initial Donut</h2>
+            <h2>Purchase Donut Mutiplier:</h2>
+           <h2 class="donut_Mutiplier_Display"></h2>
+        </Section>
+            <section class="buttons">
+                <button class="donut_Click_button">Add Donut</button>
+                <button class="purchase_Auto_Clicker-Button">purchase Auto Clicker</button>
+                <button class="purchase_Donut_Multipler"> purchase Donut Multiplier</button>
+            </section>
     </div>
-    <script src="/src/app.js"></script>
-    <script src="/src/js/DonutMaker.js"></script>
+    <script src="./src/js/DonutMaker.js"></script>
+    <script src="./src/js/app.js"></script>
+    
 </body>
 </html>
