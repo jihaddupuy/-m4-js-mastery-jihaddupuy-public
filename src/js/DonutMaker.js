@@ -11,6 +11,9 @@ class DonutMaker {
 
     addDonut(){
         this.donutCount += 1;
+        if(this.donutCount <0){
+            this.donutCount =0;
+        }
     }
 
     getDonutCount(){

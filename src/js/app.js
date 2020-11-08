@@ -3,8 +3,8 @@ const purchaseAutoClickerElement = document.querySelector('.autoClicker_Dount_Di
 const purchaseDonutMutiplierElement = document.querySelector('.donut_Mutiplier_Display');
 
 const addDonutClickButton = document.querySelector('.donut_Click_button')
-//const purchaseAutoClickerButton = document.querySelector('.purchase_Auto_Clicker-Button')
-//const purchaseDonutMutiplier = document.querySelector('.purchase_Donut_Multipler')
+const purchaseAutoClickerButton = document.querySelector('.purchase_Auto_Clicker-Button')
+const purchaseDonutMutiplierButton = document.querySelector('.purchase_Donut_Multipler')
 
 const donutMaker = new DonutMaker();
 
@@ -17,13 +17,13 @@ const updateDonutCountDisplay = function(){
 }
 
 // update auto click count display
-const updateAutoClickerCount = function(){
- purchaseAutoClickerElement.innerText = donutMaker.purchaseAutoClicker();
+const updateAutoClickerCountDisplay = function(){
+ purchaseAutoClickerElement.innerText = donutMaker.getAutoClickerCount();
 }
 
 // update donut Multipler count display
-const updateDonutMultipler = function(){
-    purchaseDonutMutiplierElement.innerText = donutMaker.getDonutMultiplier();
+const updateDonutMultiplerDisplay = function(){
+    purchaseDonutMutiplierElement.innerText = donutMaker.returnDonutMultiplier();
 }
 
 // add eventListener to Donut Click button
@@ -33,5 +33,22 @@ addDonutClickButton.addEventListener("click",function(){
     updateDonutCountDisplay();
 
 })
+// add eventlistener to Purchase auto clicker button
+purchaseAutoClickerButton.addEventListener("click",function(){
+    donutMaker.purchaseAutoClicker();
+
+    updateAutoClickerCountDisplay();
+
+})
+// add event listerer to purchase donut multiplier button
+purchaseDonutMutiplierButton.addEventListener("click",function(){
+    donutMaker.getDonutMultiplier();
+
+    updateDonutMultiplerDisplay();
+
+
+})
 
 updateDonutCountDisplay();
+ updateAutoClickerCount();
+ updateDonutMultiplerDisplay();
