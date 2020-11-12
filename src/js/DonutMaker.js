@@ -10,23 +10,38 @@ class DonutMaker {
     }
 
     addDonut(){
-        this.donutCount += 1;
+        this.donutCount += this.donutClickValue;
         if(this.donutCount <0){
             this.donutCount =0;
         }
+        
     }
 
     getDonutCount(){
         return this.donutCount;
     }
-   
+
+    getDonutClickValue(){
+        return this.donutClickValue;
+    }
+
+    addAutoClicker(){
+        this.autoClickerCount *=(this.donutMultiplierCount)
+    }
+
     purchaseAutoClicker(){
         this.autoClickerCount+=1;
-        this.donutCount-=this.autoClickerCost;
+        if (   this.donutCount <100){
+            this.autoClickerCount =0
+        }
+       this.donutCount-=this.autoClickerCost
     }
 
     getAutoClickerCount(){
         return this.autoClickerCount;
+    }
+    getAutoClickerCost(){
+        return this.autoClickerCost;
     }
 
     increaseCostOfAutoClicker(){  
@@ -35,13 +50,13 @@ class DonutMaker {
 
     autoCountAffectsDonutCountWhenActive(){
         for( let i=0; i< this.autoClickerCount; i++){
-            this.addDonut()
+            this.getDonutClickValue()
         }
     }
 
     getDonutMultiplier(){
         this.donutMultiplierCount+=1;
-        this.donutCount -=10;
+        this.donutCount -= this.donutMultiplierCost;
     }
 
     returnDonutMultiplier(){
@@ -50,45 +65,15 @@ class DonutMaker {
 
     increaseCostDonutmultiplier(){
         this.donutMultiplierCost +=(this.donutMultiplierCost * 0.10)
+        return this.donutMultiplierCost
         
     }
 
-    increasetDonutmultiplier(){
-      this.donutClickValue =  Math.pow(1.2, DonutMultiplierCount)
+    increaseDonutmultiplier(){
+      this.donutClickValue =  Math.pow(1.2, this.donutMultiplierCount)
     }
 
-    addAutoClicker(){
-        this.autoClickerCount *=(this.donutMultiplierCount)
+    getDonutMultiplierCost(){
+       return this.donutMultiplierCost;
     }
-
-    getDonutClickValue(){
-        return this.DonutClickValue
-    }
-
 }
-
-
-
-
-
-
-// console.log(AddDonut)
-// let AddDonut =+1;
-// function AddDonut(Number){
-//     return Number == 1
-//     alert(AddDonut)
-// }
-// let Autoclicker =100
-// function Autoclicker(Number){
-// return Autoclicker
-// Autoclicker-AddDonut = AddDonut 
-// }
-// Autoclicker =+1
-
-
-
-
-   
-//     constructor AddDonut
-
-
