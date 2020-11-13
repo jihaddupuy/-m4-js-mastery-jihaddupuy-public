@@ -50,10 +50,10 @@ addDonutClickButton.addEventListener("click",function(){
 purchaseAutoClickerButton.addEventListener("click",function(){
     donutMaker.purchaseAutoClicker();
     donutMaker.increaseCostOfAutoClicker();
-    //donutMaker.a
 
     updateAutoClickerCountDisplay();
     updateDonutCountDisplay();
+    updateAutoClickerCostDisplay();
 
 })
 // add event listerer to purchase donut multiplier button
@@ -65,9 +65,16 @@ purchaseDonutMutiplierButton.addEventListener("click",function(){
     updateDonutMultiplerDisplay();
     updateDonutCountDisplay();
     updateDonutMultiplerCostDisplay();
-
 })
-updateDonutCountDisplay();
+
+
+const autoClick = setInterval(autoClickFunction, 1000);
+
+function autoClickFunction() {
+    donutMaker.autoClickAddsDonutsEverySecond();
+    updateDonutCountDisplay();
+}
+
  updateAutoClickerCountDisplay();
  updateDonutMultiplerDisplay();
  updateAutoClickerCostDisplay();

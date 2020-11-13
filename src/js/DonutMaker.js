@@ -13,8 +13,7 @@ class DonutMaker {
         this.donutCount += this.donutClickValue;
         if(this.donutCount <0){
             this.donutCount =0;
-        }
-        
+        }   
     }
 
     getDonutCount(){
@@ -25,16 +24,11 @@ class DonutMaker {
         return this.donutClickValue;
     }
 
-    addAutoClicker(){
-        this.autoClickerCount *=(this.donutMultiplierCount)
-    }
-
     purchaseAutoClicker(){
-        this.autoClickerCount+=1;
-        if (   this.donutCount <100){
-            this.autoClickerCount =0
+        if (this.donutCount >= this.autoClickerCost){
+            this.autoClickerCount+=1; 
+            this.donutCount-=this.autoClickerCost
         }
-       this.donutCount-=this.autoClickerCost
     }
 
     getAutoClickerCount(){
@@ -46,12 +40,11 @@ class DonutMaker {
 
     increaseCostOfAutoClicker(){  
       this.autoClickerCost += ( this.autoClickerCost *0.10)
+      console.log(this.autoClickerCost)
     }
 
-    autoCountAffectsDonutCountWhenActive(){
-        for( let i=0; i< this.autoClickerCount; i++){
-            this.getDonutClickValue()
-        }
+    autoClickAddsDonutsEverySecond(){
+        this.donutCount = this.donutCount + (this.autoClickerCount * this.donutClickValue)
     }
 
     getDonutMultiplier(){
@@ -62,17 +55,15 @@ class DonutMaker {
     returnDonutMultiplier(){
         return this.donutMultiplierCount;
     }
+    increaseDonutmultiplier(){
+        this.donutClickValue =  Math.pow(1.2, this.donutMultiplierCount)
+      }
 
     increaseCostDonutmultiplier(){
         this.donutMultiplierCost +=(this.donutMultiplierCost * 0.10)
-        return this.donutMultiplierCost
-        
+        return this.donutMultiplierCost   
     }
-
-    increaseDonutmultiplier(){
-      this.donutClickValue =  Math.pow(1.2, this.donutMultiplierCount)
-    }
-
+    
     getDonutMultiplierCost(){
        return this.donutMultiplierCost;
     }
